@@ -1,4 +1,4 @@
-# RPI4 server
+# RPI4 OS configuration
 This configuration enable to create normal and administrative operating system on one device.
 
 ### Description
