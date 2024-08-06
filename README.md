@@ -1,4 +1,4 @@
-# RPI4 OS configuration
+# RPI4 - operational and administrative (rescue) operating system
 This configuration enable to create normal and administrative operating system on one device.
 
 ### Description

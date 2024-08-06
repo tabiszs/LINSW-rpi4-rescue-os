@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Introduce url encoding to solve the problem of Chinese file name download error
 from urllib import parse
 import tornado;
@@ -55,12 +56,15 @@ class ListHandler(BaseHandler):
     def get(self):
         treeRes = make_results_tree(settings["server-path"]);
         uploadMessage = "";
+        downloadMessage = "";
         if (self.isAdmin()):
             if "uploaded" in self.request.arguments:
                 uploadMessage = "Successfully uploaded " + self.request.arguments["uploaded"][0].decode("utf-8");
+            elif "filename" in self.request.arguments:
+                downloadMessage = "Successfully downloaded" + self.request.arguments["filename"][0].decode("utf-8");
             elif "invalidPath" in self.request.arguments:
                 uploadMessage = "Provided path is invalid"
-            self.render("authTree.html", tree=treeRes, uploadMessage=uploadMessage);
+            self.render("authTree.html", tree=treeRes, uploadMessage=uploadMessage, downloadMessage=downloadMessage);
         else:
             self.render("tree.html", tree=treeRes);
 

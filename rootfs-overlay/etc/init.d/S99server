@@ -1,7 +1,0 @@
-#!/bin/sh
-
-#
-# Start tornado file server
-#
-
-python3 /usr/file-server/server.py 192.168.145.97 8888
